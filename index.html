@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        
+        <!-- Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Nova+Mono' rel='stylesheet' type='text/css'>
+
+        <style>
+            html {
+              position: relative;
+              min-height: 100%;
+            }
+            body {
+                background-color: aqua;
+                margin-bottom: 120px;
+                background-image: url(img/bg.png)
+            }
+            h2 {
+                color: aqua;
+                font-family: 'VT323';
+                padding: 20px;
+                margin-top: 0;
+                text-align: center;
+                border-bottom: 3px solid aqua;
+                font-size:36px;
+            }
+            h1#generated-text {
+                font-family: sans-serif;
+                font-size: 50px;
+                color: aqua;
+                text-align: center;
+                padding: 20px;
+            }
+            button {
+                padding: 15px;
+                margin: 20px;
+                background-color: aqua;
+                text-align: center;
+                font-family: 'VT323';
+                border: none;
+                z-index: 999;
+            }
+            button:hover {
+                background-color: #00E8E8;
+            }
+            .footer {
+              position: absolute;
+              border-top:3px solid aqua;
+              padding: 20px;
+              bottom: 0;
+              width: 100%;
+              height: 120px;
+              color:aqua;
+              font-family: 'VT323';
+              font-size: 20px;
+            }
+            #top-gif {
+                width: 120px;
+                height: 120px;
+                background-image: url(img/glowball.gif);
+                margin: 0 auto;
+                margin-top: 20px;
+                background-size: 100%;
+            }
+            #count {
+                background-image: url(img/count.gif);
+                width: 100px;
+                height: 20px;
+                margin-right: 5px;
+                margin-top: 5px;
+                display: inline-block;
+            }
+            .footer p { 
+                display: inline-block; 
+                vertical-align: top;
+            }
+            #overlay {
+                height: 100%;
+                width: 100%;
+                position:fixed;
+                background-image: url(img/lightning-right.gif);
+                background-size: 100%;
+                display: none;
+            }
+            #rain {
+                height: 100%;
+                width: 100%;
+                position:fixed;
+                /*background-size: 100%;*/
+            }
+            #rain::after {
+              content: "";
+              background: url(img/rain.gif);
+              opacity: 0.15;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              position: absolute;
+              z-index: -1;   
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="rain">
+            <div id="overlay"></div>
+            <div class="container">
+                <div class="row" style="text-align: center;">
+                    <div id="top-gif"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h2 id="headline"></h1>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h1 id="generated-text">Example Name Generator Name Generator</h1>
+                    </div>
+                </div>
+                <div class="row" style="text-align: center;">
+                    <button id="generate-name"><img src="img/rotating-globe.gif" style="width: 15px;" /> Click Click Click!</button>
+                </div>
+            </div>
+
+            <footer class="footer">
+              <div class="container" style="text-align: center;">
+                <div id="count"></div> <p>names generated</p>
+              </div>
+            </footer>
+
+
+            <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+            <script type="text/javascript" src="jquery.typetype.min.js"></script>
+            <script type="text/javascript">
+                $('#headline').typetype(
+                  'The Classy Official Name Generator Name Generator',
+                  {
+                    e: 0.02, // error rate
+                    t: 100
+                  }
+                )
+
+                $('#generate-name').on('click', function(){
+                    $('#overlay').show(1).delay(1000).hide(1);
+                })
+            </script>
+        </div>
+    </body>
+
+</html>
