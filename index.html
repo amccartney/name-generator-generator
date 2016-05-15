@@ -36,9 +36,6 @@
                 padding: 20px;
                 font-family: 'VT323';
             }
-            h1#generated-text span {
-                margin: 0 5px;
-            }
             .hidden {
               display: none;
             }
@@ -146,92 +143,78 @@
             <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
             <script type="text/javascript" src="jquery.typetype.min.js"></script>
             <script type="text/javascript">
-                $('#headline').typetype(
-                  'The Classy, Official Name Generator Name Generator',
-                  {
-                    e: 0, // error rate
-                    t: 40
-                  }
-                )
-
-                $('button#generate-name')
-                  .on('click', function() {
-                      regenerate();
-                      $('#overlay').show(1)
-                        .delay(1000)
-                        .hide(1);
-                  })
-
-                var data = {
-                    "descriptor":["hipster","official","actual","stoner","random","inner","weird","true","unbelievable","classy","great"],
-                    "thing":["Carlos Danger","Trump Spokesperson","Luchador","Wilco","Emo Band","Benedict Cumberbatch","Adele Dazeem","Unicorn","baby","business","Tumblr","D&D","Pro wrestling","Middle Earth","Wu Tang","Jedi","Human","Star Wars","Vulcan","Porn","Literary porn star","Kentucky Derby Horse","Minor League Baseball Franchise","Nail Polish","Kardashian","Batman","Previous life","Starbucks","Political Memoir","2016","'Supernatural' porn starz","Juggalo","Literary pen name","Royal baby","Norse","Alien","Blues","WASP College","Startup","Penis","Testicle","Chicken","Angry man in the local paper","Etsy shop","Hunger Games","Bar","Donald Trump C-list Cabinet","Trump Hat","James Bond movie","Dan Brown sequel","George Allen insult","rock band","bad bluegrass band","Boy band","Austin band","Political party","Political Action Committee","Fantasy Manmade Feature","Yacht","Showbiz autobiography","Plague","Rick Perry Nickname","Secret Service","Ferrari Car","Bond Villian","Fantasy Football Team","A Capella Group","Domain","Fallout 4","Street Fighter V","Vampire","Vine star","Pirate","Academic essay","Beyonce baby","Catholic saint","Sarah Palin baby","Game of Thrones Sword","Victorian Pen Name","Samurai","Trump Nickname","iPhone App","Mariah Carey Album","Drag Queen"],
-                    "url":["http://www.slate.com/articles/news_and_politics/low_concept/2013/07/carlos_danger_name_generator_use_our_widget_to_get_a_name_like_anthony_weiner.html","https://www.washingtonpost.com/news/the-fix/wp/2016/05/13/your-donald-trump-fake-spokesman-name-generator-is-here/","http://latinousa.org/2013/10/10/luchador-name-generator/","http://pitchfork.com/news/61210-wilco-create-actual-random-name-generator/","https://www.buzzfeed.com/agh/my-teenage-boy?utm_term=.wn11J09VA#.tsmxwa8gR","http://benedictcumberbatchgenerator.tumblr.com/","http://www.slate.com/articles/news_and_politics/low_concept/2013/07/carlos_danger_name_generator_use_our_widget_to_get_a_name_like_anthony_weiner.html","http://unicorn.namegeneratorfun.com/","http://www.mandatory.com/2013/04/09/hipster-baby-name-generator/","http://www.hipsterbusiness.name/","http://www.spinxo.com/username-generator?search=Hipster+Tumblr+Name+Generator","https://www.wizards.com/dnd/article5.asp?x=dnd/dx20010202b","https://www.wrestlingname.com/","http://www.myprecious.us/name_generator.php","http://www.mess.be/inickgenwuname.php","http://jediname.com/","http://fantasynamegenerators.com/human-sw-names.php#.VzelYBWDGko","http://starwars.namegeneratorfun.com/","http://fantasynamegenerators.com/star-trek-vulcan-names.php","http://pr0nname.com/","https://www.buzzfeed.com/jarrylee/literary-porn-star-name-generator?utm_term=.ny9yZ3dE2#.mgZZ8pyPa","http://www.si.com/extra-mustard/triple-crown-kentucky-derby-preakness-belmont-random-horse-name-generator","http://www.sbnation.com/2016/4/25/11502620/minor-league-baseball-franchise-generator","https://www.buzzfeed.com/shoppersdrugmart/what-is-your-nail-polish-name?b=1&utm_term=.ayRVDjmxZ#.jmY3G6n1A","https://www.buzzfeed.com/lindsayfarber/what-should-your-kardashian-name-be","https://www.buzzfeed.com/welostourempire/whats-your-batman-name-29ju","https://www.buzzfeed.com/floperry/what-was-your-name-in-your-previous-life","https://www.buzzfeed.com/jessebenjamin/whats-your-starbucks-name","http://time.com/2850529/memoir-generator/","https://www.buzzfeed.com/alexfinnis/what-should-your-2016-name-be","https://www.buzzfeed.com/vikky/what-is-your-supernatural-porn-star-name-y65c","https://www.buzzfeed.com/sly/whats-your-juggalo-name","https://www.buzzfeed.com/sarahgalo/whats-your-literary-pen-name","https://www.buzzfeed.com/jamiejones/what-would-your-royal-baby-name-be","https://www.buzzfeed.com/jamiejones/what-would-your-royal-baby-name-be","https://www.buzzfeed.com/perpetua/space-alien-name","https://www.buzzfeed.com/fjelstud/whats-your-blues-name","http://www.huffingtonpost.com/davidhalperin/for-profit-colleges-appea_b_8252470.html","https://www.buzzfeed.com/jessicamisener/startup-name-generator","https://www.buzzfeed.com/jeanlucbouchard/hubba-hubba-boing-boing","https://www.buzzfeed.com/alexfinnis/what-should-you-name-your-testicles","https://www.buzzfeed.com/megscanlon/what-is-your-chicken-name-hmjs","https://www.buzzfeed.com/danieldalton/keith-gary-keith","https://www.buzzfeed.com/samimain/what-should-you-name-your-etsy-shop","http://www.slate.com/blogs/browbeat/2014/11/24/hunger_games_name_generator_create_your_own_katniss_everdeen_esque_name.html","http://www.slate.com/blogs/browbeat/2015/09/04/brooklyn_bar_menu_generator_a_hilarious_satire_of_the_worst_clich_s_of_artisanal.html","http://www.slate.com/articles/news_and_politics/politics/2016/03/donald_trump_celebrity_apprentice_cabinet_generator.html","https://www.washingtonpost.com/news/the-fix/wp/2015/10/06/hey-lets-all-make-our-own-donald-trump-hats/","http://www.slate.com/articles/arts/movies/2012/11/skyfall_or_skyball_james_bond_007_random_movie_generator.html","http://www.slate.com/articles/news_and_politics/low_concept/2009/09/the_dan_brown_sequel_generator.html","http://www.slate.com/articles/news_and_politics/low_concept/2006/09/the_george_allen_insult_generator.html","www.cheezus.com/stoner/","http://www.mandolincafe.com/archives/bandnames/","http://www.insultorinspire.com/boy-band-names-generator.php","http://austinbandgenerator.com/","http://fantasynamegenerators.com/political-party-names.php#.VzeqLhWDGko","http://sunlightfoundation.com/blog/2010/12/02/sunlights-political-action-committee-pac-name-generator/","http://www.mithrilandmages.com/utilities/ManmadeFeatureNames.php","http://yachtnamegenerator.com/","https://tarasparlingwrites.com/2014/06/17/showbizpolitical-autobiography-book-title-generator/","http://www.ndemiccreations.com/en/22-plague-inc","http://www.slate.com/articles/news_and_politics/low_concept/2015/08/ronald_raven_name_generator_what_bird_name_would_rick_perry_give_you.html","https://www.washingtonpost.com/news/the-fix/wp/2015/09/17/now-you-can-generate-your-very-own-secret-service-codename/","http://www.theverge.com/2016/2/8/10937712/ferrari-car-name-generator","http://www.lovereading.co.uk/bond-villain/","http://www.sportsgrid.com/nfl/heres-that-fantasy-football-team-name-generator-youve-been-looking-for/","http://time.com/3858092/pitch-perfect-name-generator/","http://www.namemesh.com/","http://www.theverge.com/2015/6/3/8715281/fallout-4-character-name-generator-bethesda-announcement","http://www.inquisitr.com/2769456/street-fighter-v-name-generator-celebrates-25-years-of-sfii-with-hilarious-results/","http://www.quizrocket.com/vampire-name-generator","http://vinenames.tumblr.com/","http://www.gotoquiz.com/pirate_name_generator","http://www.besttitlegenerator.com/","http://nymag.com/thecut/2013/05/whats-your-beyonce-baby-name-try-our-generator.html","http://catholic-link.org/2016/01/16/saint-name-generator/","http://boards.fool.com/sarah-palin-baby-name-generator-26988812.aspx","http://time.com/79187/game-of-thrones-oathkeeper-sword-name-generator/","http://www.huffingtonpost.com/2014/03/31/pen-name-generator_n_5045267.html","http://www.usatoday.com/story/life/people/2013/07/12/royal-name-generator/2512673/","http://samourai.grandpalais.fr/en","http://tdstrumpnicknamegenerator.com/","http://www.huffingtonpost.com/greg-voakes/new-iphone-app-game_b_1339360.html","http://time.com/84645/mariah-carey-album-title-generator/","http://www.dragulator.com/"],
-                    "url2":["","","","","","","","","","","","","","","http://recordstore.com/wuname/wuname.pl","","","","","","","","","","","","","http://www.whatsmystarbucksname.com/","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","http://beybeyname.com/","","","","","","","","","",""]
+              var typeTypeOpts = {
+                  e: 0, // error rate
+                  t: 30
                 }
 
-                var trueFalse = [true, false];
+              $('#headline').typetype(
+                'The Classy, Official Name Generator Name Generator', typeTypeOpts
+              )
 
-                var body = $("body");
-                $("<div>")
-                	.addClass("h1#generated-text")
-                  .appendTo(body);
+              $('button#generate-name')
+                .on('click', function() {
+                  regenerate();
+                  $('#overlay').show(1)
+                    .delay(1000)
+                    .hide(1);
+                })
 
-                regenerate();
+              var data = {
+                "descriptor":["hipster","official","actual","stoner","random","weird","true","unbelievable","classy","great"],
+                "thing":["Carlos Danger","Trump Spokesperson","Luchador","Wilco","Emo Band","Benedict Cumberbatch","Adele Dazeem","Unicorn","baby","business","Tumblr","D&D","Pro wrestling","Middle Earth","Wu Tang","Jedi","Human","Star Wars","Vulcan","Porn","Literary porn star","Kentucky Derby Horse","Minor League Baseball Franchise","Nail Polish","Kardashian","Batman","Previous life","Starbucks","Political Memoir","2016","'Supernatural' porn starz","Juggalo","Literary pen name","Royal baby","Norse","Alien","Blues","WASP College","Startup","Penis","Testicle","Chicken","Angry man in the local paper","Etsy shop","Hunger Games","Bar","Donald Trump C-list Cabinet","Trump Hat","James Bond movie","Dan Brown sequel","George Allen insult","rock band","bad bluegrass band","Boy band","Austin band","Political party","Political Action Committee","Fantasy Manmade Feature","Yacht","Showbiz autobiography","Plague","Rick Perry Nickname","Secret Service","Ferrari Car","Bond Villian","Fantasy Football Team","A Capella Group","Domain","Fallout 4","Street Fighter V","Vampire","Vine star","Pirate","Academic essay","Beyonce baby","Catholic saint","Sarah Palin baby","Game of Thrones Sword","Victorian Pen Name","Samurai","Trump Nickname","iPhone App","Mariah Carey Album","Drag Queen"],
+                "url":["http://www.slate.com/articles/news_and_politics/low_concept/2013/07/carlos_danger_name_generator_use_our_widget_to_get_a_name_like_anthony_weiner.html","https://www.washingtonpost.com/news/the-fix/wp/2016/05/13/your-donald-trump-fake-spokesman-name-generator-is-here/","http://latinousa.org/2013/10/10/luchador-name-generator/","http://pitchfork.com/news/61210-wilco-create-actual-random-name-generator/","https://www.buzzfeed.com/agh/my-teenage-boy?utm_term=.wn11J09VA#.tsmxwa8gR","http://benedictcumberbatchgenerator.tumblr.com/","http://www.slate.com/articles/news_and_politics/low_concept/2013/07/carlos_danger_name_generator_use_our_widget_to_get_a_name_like_anthony_weiner.html","http://unicorn.namegeneratorfun.com/","http://www.mandatory.com/2013/04/09/hipster-baby-name-generator/","http://www.hipsterbusiness.name/","http://www.spinxo.com/username-generator?search=Hipster+Tumblr+Name+Generator","https://www.wizards.com/dnd/article5.asp?x=dnd/dx20010202b","https://www.wrestlingname.com/","http://www.myprecious.us/name_generator.php","http://www.mess.be/inickgenwuname.php","http://jediname.com/","http://fantasynamegenerators.com/human-sw-names.php#.VzelYBWDGko","http://starwars.namegeneratorfun.com/","http://fantasynamegenerators.com/star-trek-vulcan-names.php","http://pr0nname.com/","https://www.buzzfeed.com/jarrylee/literary-porn-star-name-generator?utm_term=.ny9yZ3dE2#.mgZZ8pyPa","http://www.si.com/extra-mustard/triple-crown-kentucky-derby-preakness-belmont-random-horse-name-generator","http://www.sbnation.com/2016/4/25/11502620/minor-league-baseball-franchise-generator","https://www.buzzfeed.com/shoppersdrugmart/what-is-your-nail-polish-name?b=1&utm_term=.ayRVDjmxZ#.jmY3G6n1A","https://www.buzzfeed.com/lindsayfarber/what-should-your-kardashian-name-be","https://www.buzzfeed.com/welostourempire/whats-your-batman-name-29ju","https://www.buzzfeed.com/floperry/what-was-your-name-in-your-previous-life","https://www.buzzfeed.com/jessebenjamin/whats-your-starbucks-name","http://time.com/2850529/memoir-generator/","https://www.buzzfeed.com/alexfinnis/what-should-your-2016-name-be","https://www.buzzfeed.com/vikky/what-is-your-supernatural-porn-star-name-y65c","https://www.buzzfeed.com/sly/whats-your-juggalo-name","https://www.buzzfeed.com/sarahgalo/whats-your-literary-pen-name","https://www.buzzfeed.com/jamiejones/what-would-your-royal-baby-name-be","https://www.buzzfeed.com/jamiejones/what-would-your-royal-baby-name-be","https://www.buzzfeed.com/perpetua/space-alien-name","https://www.buzzfeed.com/fjelstud/whats-your-blues-name","http://www.huffingtonpost.com/davidhalperin/for-profit-colleges-appea_b_8252470.html","https://www.buzzfeed.com/jessicamisener/startup-name-generator","https://www.buzzfeed.com/jeanlucbouchard/hubba-hubba-boing-boing","https://www.buzzfeed.com/alexfinnis/what-should-you-name-your-testicles","https://www.buzzfeed.com/megscanlon/what-is-your-chicken-name-hmjs","https://www.buzzfeed.com/danieldalton/keith-gary-keith","https://www.buzzfeed.com/samimain/what-should-you-name-your-etsy-shop","http://www.slate.com/blogs/browbeat/2014/11/24/hunger_games_name_generator_create_your_own_katniss_everdeen_esque_name.html","http://www.slate.com/blogs/browbeat/2015/09/04/brooklyn_bar_menu_generator_a_hilarious_satire_of_the_worst_clich_s_of_artisanal.html","http://www.slate.com/articles/news_and_politics/politics/2016/03/donald_trump_celebrity_apprentice_cabinet_generator.html","https://www.washingtonpost.com/news/the-fix/wp/2015/10/06/hey-lets-all-make-our-own-donald-trump-hats/","http://www.slate.com/articles/arts/movies/2012/11/skyfall_or_skyball_james_bond_007_random_movie_generator.html","http://www.slate.com/articles/news_and_politics/low_concept/2009/09/the_dan_brown_sequel_generator.html","http://www.slate.com/articles/news_and_politics/low_concept/2006/09/the_george_allen_insult_generator.html","www.cheezus.com/stoner/","http://www.mandolincafe.com/archives/bandnames/","http://www.insultorinspire.com/boy-band-names-generator.php","http://austinbandgenerator.com/","http://fantasynamegenerators.com/political-party-names.php#.VzeqLhWDGko","http://sunlightfoundation.com/blog/2010/12/02/sunlights-political-action-committee-pac-name-generator/","http://www.mithrilandmages.com/utilities/ManmadeFeatureNames.php","http://yachtnamegenerator.com/","https://tarasparlingwrites.com/2014/06/17/showbizpolitical-autobiography-book-title-generator/","http://www.ndemiccreations.com/en/22-plague-inc","http://www.slate.com/articles/news_and_politics/low_concept/2015/08/ronald_raven_name_generator_what_bird_name_would_rick_perry_give_you.html","https://www.washingtonpost.com/news/the-fix/wp/2015/09/17/now-you-can-generate-your-very-own-secret-service-codename/","http://www.theverge.com/2016/2/8/10937712/ferrari-car-name-generator","http://www.lovereading.co.uk/bond-villain/","http://www.sportsgrid.com/nfl/heres-that-fantasy-football-team-name-generator-youve-been-looking-for/","http://time.com/3858092/pitch-perfect-name-generator/","http://www.namemesh.com/","http://www.theverge.com/2015/6/3/8715281/fallout-4-character-name-generator-bethesda-announcement","http://www.inquisitr.com/2769456/street-fighter-v-name-generator-celebrates-25-years-of-sfii-with-hilarious-results/","http://www.quizrocket.com/vampire-name-generator","http://vinenames.tumblr.com/","http://www.gotoquiz.com/pirate_name_generator","http://www.besttitlegenerator.com/","http://nymag.com/thecut/2013/05/whats-your-beyonce-baby-name-try-our-generator.html","http://catholic-link.org/2016/01/16/saint-name-generator/","http://boards.fool.com/sarah-palin-baby-name-generator-26988812.aspx","http://time.com/79187/game-of-thrones-oathkeeper-sword-name-generator/","http://www.huffingtonpost.com/2014/03/31/pen-name-generator_n_5045267.html","http://www.usatoday.com/story/life/people/2013/07/12/royal-name-generator/2512673/","http://samourai.grandpalais.fr/en","http://tdstrumpnicknamegenerator.com/","http://www.huffingtonpost.com/greg-voakes/new-iphone-app-game_b_1339360.html","http://time.com/84645/mariah-carey-album-title-generator/","http://www.dragulator.com/"],
+                "url2":["","","","","","","","","","","","","","","http://recordstore.com/wuname/wuname.pl","","","","","","","","","","","","","http://www.whatsmystarbucksname.com/","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","http://beybeyname.com/","","","","","","","","","",""]
+              }
 
-                function randomArrItem(arr) {
-                  var randItem = arr[Math.floor( Math.random() * arr.length )];
-                  return randItem;
+              var trueFalse = [true, false];
+
+              var body = $("body");
+              $("<div>").addClass("h1#generated-text").appendTo(body);
+              // regenerate();
+
+              function randomArrItem(arr) {
+                var randItem = arr[Math.floor( Math.random() * arr.length )];
+                return randItem;
+              }
+
+              function capitalize(str) {
+                var newstr = str.split(" ");
+                newstr.forEach(function(currStr, idx) {
+                  var copy = currStr.substring(1).toLowerCase();
+                  newstr[idx] = currStr[0].toUpperCase() + copy;
+                });
+                newstr = newstr.join(" ");
+                return newstr;
+              }
+
+              function dedupe(currStr, arr) {
+                var tempArr = arr.filter(function(item) {
+                  return item !== currStr;
+                });
+                return randomArrItem(tempArr);
+              }
+
+              function regenerate() {
+                var nameGenWrapper = $("h1#generated-text").empty();
+                var generatedNameStr = "The "
+                var descriptor1 = capitalize(randomArrItem(data.descriptor));
+                var descriptor2 = capitalize(randomArrItem(data.descriptor));
+                var randTrueFalse = Math.random() >= 0.5;
+                var descriptors;
+                if (randTrueFalse === true && descriptor1 === descriptor2) {
+                  descriptors = descriptor1 + ", " + capitalize(dedupe(descriptor2, data.descriptor));
+                } else if (randTrueFalse === true && descriptor1 !== descriptor2) {
+                  descriptors = descriptor1 + ", " + descriptor2;
+                } else {
+                  descriptors = descriptor1
                 }
+                var thing = capitalize(randomArrItem(data.thing));
+                generatedNameStr += descriptors + " " + thing + " Name Generator"
 
-                function capitalize(str) {
-                  var newstr = str.split(" ");
-                  newstr.forEach(function(currStr, idx) {
-                    var copy = currStr.substring(1).toLowerCase();
-                    newstr[idx] = currStr[0].toUpperCase() + copy;
-                  });
-                  newstr = newstr.join(" ");
-                  return newstr;
-                }
-
-                function dedupe(currStr, arr) {
-                  var tempArr = arr.filter(function(item) {
-                    return item !== currStr;
-                  });
-                  return randomArrItem(tempArr);
-                }
-
-                function regenerate() {
-                  var nameGenWrapper = $("h1#generated-text").empty();
-
-                  $("<span>").text("The")
-                    .appendTo(nameGenWrapper);
-
-                  $("<span>")
-                    .addClass("descriptor1")
-                    .typetype( capitalize(randomArrItem(data.descriptor)) )
-                    .appendTo(nameGenWrapper);
-
-                  $("<span>")
-                    .addClass("descriptor2")
-                    .toggleClass("hidden", function() { return randomArrItem(trueFalse); })
-                    .typetype( function() {
-                      var currDesc = capitalize(randomArrItem(data.descriptor));
-                      if (currDesc === $(".descriptor1").text()) {
-                        currDesc = ", " + capitalize(dedupe(currDesc, data.descriptor));
-                      }
-                      return currDesc;
-                    })
-                    .appendTo(nameGenWrapper);
-
-                  $("<span>")
-                    .addClass("thing")
-                    .typetype( capitalize(randomArrItem(data.thing)) )
-                    .appendTo(nameGenWrapper);
-
-                  $("<span>")
-                    .typetype("Name Generator")
-                    .appendTo(nameGenWrapper);
-                }
+                $("<span>").typetype(generatedNameStr, typeTypeOpts)
+                  .appendTo(nameGenWrapper);
+              }
             </script>
         </div>
     </body>
