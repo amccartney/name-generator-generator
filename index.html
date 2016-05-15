@@ -7,16 +7,15 @@
 
         <!-- Fonts -->
         <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Nova+Mono' rel='stylesheet' type='text/css'>
-
+        
         <style>
             html {
-              position: relative;
-              min-height: 100%;
+             height: 100%;
             }
             body {
+                height: 100%;
                 background-color: aqua;
-                margin-bottom: 120px;
+                /*margin-bottom: 120px;*/
                 background-image: url(img/bg.png)
             }
             h2 {
@@ -34,13 +33,6 @@
                 color: aqua;
                 text-align: center;
                 padding: 20px;
-                font-family: 'VT323';
-            }
-            h1#generated-text span {
-                margin: 0 5px;
-            }
-            .hidden {
-              display: none;
             }
             button {
                 padding: 15px;
@@ -54,16 +46,24 @@
             button:hover {
                 background-color: #00E8E8;
             }
+            .main.container {
+                min-height: 100%;
+                height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+                height: 100%;
+                margin: 0 auto -140px; /* the bottom margin is the negative value of the footer's height */
+            }
             .footer {
-              position: absolute;
+              position: relative;
               border-top:3px solid aqua;
               padding: 20px;
               bottom: 0;
               width: 100%;
-              height: 120px;
               color:aqua;
               font-family: 'VT323';
               font-size: 20px;
+            }
+            .footer, .push {
+                height: 140px; /* .push must be the same height as .footer */
             }
             #top-gif {
                 width: 120px;
@@ -81,8 +81,8 @@
                 margin-top: 5px;
                 display: inline-block;
             }
-            .footer p {
-                display: inline-block;
+            .footer p { 
+                display: inline-block; 
                 vertical-align: top;
             }
             #overlay {
@@ -108,7 +108,10 @@
               bottom: 0;
               right: 0;
               position: absolute;
-              z-index: -1;
+              z-index: -1;   
+            }
+            @media (max-width: 750px){
+                .top { display: none; }
             }
         </style>
     </head>
@@ -116,24 +119,28 @@
     <body>
         <div id="rain">
             <div id="overlay"></div>
-            <div class="container">
-                <div class="row" style="text-align: center;">
+            <div class="main container">
+                
+                <div class="row top" style="text-align: center;">
                     <div id="top-gif"></div>
                 </div>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                        <h2 id="headline"></h1>
+                        <h2 id="headline">The Classy, Official Name Generator Name Generator</h2>
                     </div>
                 </div>
-
+                
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                        <h1 id="generated-text"></h1>
+                        <h1 id="generated-text">Example Name Generator Name Generator</h1>
                     </div>
                 </div>
                 <div class="row" style="text-align: center;">
                     <button id="generate-name"><img src="img/rotating-globe.gif" style="width: 15px;" /> Click Click Click!</button>
                 </div>
+
+                <div class="push"></div>
+
             </div>
 
             <footer class="footer">
@@ -146,13 +153,13 @@
             <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
             <script type="text/javascript" src="jquery.typetype.min.js"></script>
             <script type="text/javascript">
-                $('#headline').typetype(
-                  'The Classy, Official Name Generator Name Generator',
-                  {
-                    e: 0, // error rate
-                    t: 40
-                  }
-                )
+                // $('#headline').typetype(
+                //   'The Classy, Official Name Generator Name Generator',
+                //   {
+                //     e: 0, // error rate
+                //     t: 40
+                //   }
+                // )
 
                 $('button#generate-name')
                   .on('click', function() {
